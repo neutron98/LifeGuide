@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="880cefaf-86c5-4169-bb3c-906ff911ca88" name="Default Changelist" comment="Completed recommendation service 1.0" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Arquillian JUnit Test Class" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="neutron98 &lt;neutron18@youchuns-macbook-pro.local&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/neutron98/wechat-ordering.git" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="$USER_HOME$/Programming Tools/apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1VwkLqHkwrXbzSwwlRh3jAGNetu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/admin" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cmu.youchun.recommender.service.impl" />
+      <recent name="cmu.youchun.recommender.dao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin1" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin/" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin/admin" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RecommenderApplication">
+    <configuration name="SellerModelMapperTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="recommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cmu.youchun.recommender.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cmu.youchun.recommender.dao" />
+      <option name="MAIN_CLASS_NAME" value="cmu.youchun.recommender.dao.SellerModelMapperTest" />
+      <option name="METHOD_NAME" value="selectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellerModelMapperTest.selectByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="recommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cmu.youchun.recommender.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cmu.youchun.recommender.dao" />
+      <option name="MAIN_CLASS_NAME" value="cmu.youchun.recommender.dao.SellerModelMapperTest" />
+      <option name="METHOD_NAME" value="selectByPrimaryKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellerServiceImplTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="recommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cmu.youchun.recommender.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cmu.youchun.recommender.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="cmu.youchun.recommender.service.impl.SellerServiceImplTest" />
+      <option name="METHOD_NAME" value="selectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="recommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cmu.youchun.recommender.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cmu.youchun.recommender.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="cmu.youchun.recommender.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="recommender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cmu.youchun.recommender.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cmu.youchun.recommender.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="cmu.youchun.recommender.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="register" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mybatis-generator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="RecommenderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="recommender" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cmu.youchun.recommender.RecommenderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserServiceImplTest.register" />
+      <item itemvalue="JUnit.UserServiceImplTest.login" />
+      <item itemvalue="JUnit.SellerModelMapperTest.selectAll" />
+      <item itemvalue="JUnit.SellerModelMapperTest.selectByPrimaryKey" />
+      <item itemvalue="JUnit.SellerServiceImplTest.selectAll" />
+      <item itemvalue="Maven.mybatis-generator" />
+      <item itemvalue="Spring Boot.RecommenderApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SellerServiceImplTest.selectAll" />
+        <item itemvalue="JUnit.SellerModelMapperTest.selectAll" />
+        <item itemvalue="JUnit.SellerModelMapperTest.selectByPrimaryKey" />
+        <item itemvalue="JUnit.UserServiceImplTest.login" />
+        <item itemvalue="JUnit.UserServiceImplTest.register" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="880cefaf-86c5-4169-bb3c-906ff911ca88" name="Default Changelist" comment="" />
+      <created>1578171492091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578171492091</updated>
+      <workItem from="1578171495217" duration="2630000" />
+      <workItem from="1578174332240" duration="2800000" />
+      <workItem from="1578177162615" duration="216000" />
+      <workItem from="1578177424218" duration="296000" />
+      <workItem from="1578177730632" duration="1006000" />
+      <workItem from="1578178783754" duration="18467000" />
+      <workItem from="1578239510622" duration="21572000" />
+      <workItem from="1578282005348" duration="20000" />
+      <workItem from="1578282114137" duration="3825000" />
+      <workItem from="1578335550350" duration="6067000" />
+    </task>
+    <task id="LOCAL-00001" summary="Completed recommendation service 1.0">
+      <created>1578339688885</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578339688885</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Completed recommendation service 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed recommendation service 1.0" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="197" y="23" key="#Deployment" timestamp="1578342831487">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="197" y="23" key="#Deployment/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578342831487" />
+    <state x="240" y="23" key="#Project_Structure" timestamp="1578340730175">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="240" y="23" key="#Project_Structure/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578340730175" />
+    <state x="241" y="23" key="#SQL_Dialects" timestamp="1578245634915">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="241" y="23" key="#SQL_Dialects/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578245634915" />
+    <state x="46" y="23" width="1206" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578173930902">
+      <screen x="0" y="23" width="1280" height="648" />
+    </state>
+    <state x="46" y="23" width="1206" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578173930902" />
+    <state x="364" y="154" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578240029460">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="364" y="154" key="#com.intellij.fileTypes.FileTypeChooser/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578240029460" />
+    <state x="453" y="62" key="#com.intellij.ide.util.MemberChooser" timestamp="1578280758983">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="453" y="65" key="#com.intellij.ide.util.MemberChooser/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578184718830" />
+    <state x="453" y="62" key="#com.intellij.ide.util.MemberChooser/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578280758983" />
+    <state x="453" y="62" key="#com.intellij.ide.util.MemberChooser/-1024.103.1024.617/0.23.1280.645@0.23.1280.645" timestamp="1578174899685" />
+    <state x="343" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578269101911">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="343" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578269101911" />
+    <state x="378" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578336274325">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="378" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578336274325" />
+    <state x="151" y="23" key="CommitChangelistDialog2" timestamp="1578342864708">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="151" y="23" key="CommitChangelistDialog2/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578342864708" />
+    <state width="1238" height="2" key="GridCell.Tab.0.bottom" timestamp="1578337273000">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.0.bottom/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201014" />
+    <state width="1238" height="2" key="GridCell.Tab.0.bottom/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337273000" />
+    <state width="1238" height="160" key="GridCell.Tab.0.bottom/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594964" />
+    <state width="1238" height="160" key="GridCell.Tab.0.bottom/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578174316346" />
+    <state width="1238" height="160" key="GridCell.Tab.0.bottom/-1024.103.1024.617/0.23.1280.649@0.23.1280.649" timestamp="1578174439245" />
+    <state width="1238" height="160" key="GridCell.Tab.0.bottom/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578242246092" />
+    <state width="1238" height="180" key="GridCell.Tab.0.bottom/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704030" />
+    <state width="1238" height="2" key="GridCell.Tab.0.center" timestamp="1578337272999">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.0.center/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201013" />
+    <state width="1238" height="2" key="GridCell.Tab.0.center/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337272999" />
+    <state width="1238" height="160" key="GridCell.Tab.0.center/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594964" />
+    <state width="1238" height="160" key="GridCell.Tab.0.center/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578174316345" />
+    <state width="1238" height="160" key="GridCell.Tab.0.center/-1024.103.1024.617/0.23.1280.649@0.23.1280.649" timestamp="1578174439245" />
+    <state width="1238" height="160" key="GridCell.Tab.0.center/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578242246091" />
+    <state width="1238" height="180" key="GridCell.Tab.0.center/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704028" />
+    <state width="1238" height="2" key="GridCell.Tab.0.left" timestamp="1578337272998">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.0.left/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201012" />
+    <state width="1238" height="2" key="GridCell.Tab.0.left/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337272998" />
+    <state width="1238" height="160" key="GridCell.Tab.0.left/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594963" />
+    <state width="1238" height="160" key="GridCell.Tab.0.left/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578174316345" />
+    <state width="1238" height="160" key="GridCell.Tab.0.left/-1024.103.1024.617/0.23.1280.649@0.23.1280.649" timestamp="1578174439244" />
+    <state width="1238" height="160" key="GridCell.Tab.0.left/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578242246091" />
+    <state width="1238" height="180" key="GridCell.Tab.0.left/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704028" />
+    <state width="1238" height="2" key="GridCell.Tab.0.right" timestamp="1578337272999">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.0.right/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201013" />
+    <state width="1238" height="2" key="GridCell.Tab.0.right/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337272999" />
+    <state width="1238" height="160" key="GridCell.Tab.0.right/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594964" />
+    <state width="1238" height="160" key="GridCell.Tab.0.right/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578174316346" />
+    <state width="1238" height="160" key="GridCell.Tab.0.right/-1024.103.1024.617/0.23.1280.649@0.23.1280.649" timestamp="1578174439245" />
+    <state width="1238" height="160" key="GridCell.Tab.0.right/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578242246092" />
+    <state width="1238" height="180" key="GridCell.Tab.0.right/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704029" />
+    <state width="1238" height="2" key="GridCell.Tab.1.bottom" timestamp="1578337273001">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.1.bottom/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201015" />
+    <state width="1238" height="2" key="GridCell.Tab.1.bottom/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337273001" />
+    <state width="1238" height="160" key="GridCell.Tab.1.bottom/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594965" />
+    <state width="1238" height="160" key="GridCell.Tab.1.bottom/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578188206482" />
+    <state width="1238" height="180" key="GridCell.Tab.1.bottom/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704032" />
+    <state width="1238" height="2" key="GridCell.Tab.1.center" timestamp="1578337273001">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.1.center/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201014" />
+    <state width="1238" height="2" key="GridCell.Tab.1.center/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337273001" />
+    <state width="1238" height="160" key="GridCell.Tab.1.center/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594965" />
+    <state width="1238" height="160" key="GridCell.Tab.1.center/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578188206481" />
+    <state width="1238" height="180" key="GridCell.Tab.1.center/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704031" />
+    <state width="1238" height="2" key="GridCell.Tab.1.left" timestamp="1578337273000">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.1.left/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201014" />
+    <state width="1238" height="2" key="GridCell.Tab.1.left/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337273000" />
+    <state width="1238" height="160" key="GridCell.Tab.1.left/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594965" />
+    <state width="1238" height="160" key="GridCell.Tab.1.left/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578188206481" />
+    <state width="1238" height="180" key="GridCell.Tab.1.left/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704030" />
+    <state width="1238" height="2" key="GridCell.Tab.1.right" timestamp="1578337273001">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="160" key="GridCell.Tab.1.right/-1024.103.1024.572/0.23.1280.697@0.23.1280.697" timestamp="1578185201015" />
+    <state width="1238" height="2" key="GridCell.Tab.1.right/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337273001" />
+    <state width="1238" height="160" key="GridCell.Tab.1.right/-1024.103.1024.617/0.23.1280.644@0.23.1280.644" timestamp="1578180594965" />
+    <state width="1238" height="160" key="GridCell.Tab.1.right/-1024.103.1024.617/0.23.1280.697@0.23.1280.697" timestamp="1578188206482" />
+    <state width="1238" height="180" key="GridCell.Tab.1.right/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578272704032" />
+    <state width="1238" height="147" key="GridCell.Tab.2.bottom" timestamp="1578281979821">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="147" key="GridCell.Tab.2.bottom/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578281979821" />
+    <state width="1238" height="147" key="GridCell.Tab.2.bottom/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578270300486" />
+    <state width="1238" height="147" key="GridCell.Tab.2.center" timestamp="1578281979820">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="147" key="GridCell.Tab.2.center/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578281979820" />
+    <state width="1238" height="147" key="GridCell.Tab.2.center/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578270300484" />
+    <state width="1238" height="147" key="GridCell.Tab.2.left" timestamp="1578281979820">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="147" key="GridCell.Tab.2.left/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578281979820" />
+    <state width="1238" height="147" key="GridCell.Tab.2.left/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578270300483" />
+    <state width="1238" height="147" key="GridCell.Tab.2.right" timestamp="1578281979821">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state width="1238" height="147" key="GridCell.Tab.2.right/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578281979821" />
+    <state width="1238" height="147" key="GridCell.Tab.2.right/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578270300485" />
+    <state x="82" y="23" key="Maven.ArtifactSearchDialog" timestamp="1578178806205">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="82" y="23" key="Maven.ArtifactSearchDialog/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578178806205" />
+    <state x="334" y="62" key="RollbackChangesDialog" timestamp="1578340242659">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="334" y="62" key="RollbackChangesDialog/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578340242659" />
+    <state x="283" y="23" key="SettingsEditor" timestamp="1578267659985">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="283" y="23" key="SettingsEditor/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578267659985" />
+    <state x="283" y="23" key="SettingsEditor/-1024.103.1024.617/0.23.1280.648@0.23.1280.648" timestamp="1578174018372" />
+    <state x="444" y="66" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1578248479847">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="444" y="82" key="com.intellij.testIntegration.createTest.CreateTestDialog/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578241339970" />
+    <state x="444" y="66" key="com.intellij.testIntegration.createTest.CreateTestDialog/-1024.80.1024.640/0.0.1280.720@0.0.1280.720" timestamp="1578248479847" />
+    <state x="435" y="129" width="845" height="537" key="find.popup" timestamp="1578198624633">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="435" y="129" width="845" height="537" key="find.popup/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578198624633" />
+    <state x="435" y="130" width="845" height="538" key="find.popup/-1024.103.1024.617/0.23.1280.645@0.23.1280.645" timestamp="1578175192014" />
+    <state x="17" y="51" key="new project wizard" timestamp="1578282022422">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="17" y="51" key="new project wizard/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578282022422" />
+    <state x="393" y="23" width="670" height="643" key="search.everywhere.popup" timestamp="1578337441921">
+      <screen x="0" y="23" width="1280" height="643" />
+    </state>
+    <state x="393" y="23" width="670" height="643" key="search.everywhere.popup/-1024.103.1024.617/0.23.1280.643@0.23.1280.643" timestamp="1578337441921" />
+  </component>
+</project>
