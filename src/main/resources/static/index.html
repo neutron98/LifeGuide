@@ -201,6 +201,7 @@
     <div id="firstHeader" class="titlebar activebar">
         <div class="topbar">
             <div class="citylist fl" id="citylist" tapmode="">Shanghai<img src="./image/title_home_arrow_down_normal.png" alt="" class="citylistarrow"></div>
+            <input class="search firstSearch" type="text" placeHolder="Enter shop name to search" name="keyword" id="keyword" style="width:250px;outline-width:0px;"/>
             <span id="rightTitle" style="font-size:16px;color:white;float:right;padding-top:12px;">Login</span>
             <input type="hidden" id="longitude" value="" name="longitude"/>
             <input type="hidden" id="latitude" value="" name="latitude"/>
@@ -209,7 +210,7 @@
 
 
     <div id="main" style="padding:0px;width:100%;height:100%;border:0px;">
-        <!-- 1. 头部swipe -->
+        <!-- 1. Header swipe -->
         <div id='slider' class='swipe'>
             <div class='swipe-wrap'>
                 <div class="swipe-box">
@@ -221,8 +222,26 @@
             </div>
         </div>
 
+        <!--Recommendation-->
         <div class="guesstitle" id="guess">Recommended for you<img src="/static/image/home_competitive_icon.png" alt=""></div>
         <div class="home-tuan-list" id="tuanList">
+
+        </div>
+            <!--Search-->
+            <div class="guesstitle" id="searchTitle" style="font-size:14px;">
+                <p id="resTitle" >Search Results</p>
+                <div id="extraPadding" style="display:none;">
+                    <p>Filter by category</p>
+                    <div id="categoryFilter" style="margin-bottom:10px;"></div>
+                    <p>Define Order</p>
+                    <div id="priceFilter" style="margin-bottom:10px;"></div>
+                    <p>Filter by tages</p>
+                    <div id="tagsFilter" style="margin-bottom:10px;"></div>
+                </div>
+            </div>
+            <div class="home-tuan-list" id="searchList">
+
+            </div>
 
     </div>
 
@@ -253,8 +272,14 @@
 <script type="text/javascript" src="/static/script/bootstrap.js"></script>
 
 <script type="text/javascript">
-    window.onload = function() {
+    /**
+     * Global orderBy and Filters
+     */
+    var g_orderby = null;
+    var g_categoryFilter = null;
+    var g_tagFilter = null;
 
+    window.onload = function() {
         var slider =
             Swipe(document.getElementById('slider'), {
                 auto: 1000000,
@@ -274,22 +299,11 @@
 
     jQuery(document).ready(function() {
         var g_currentUser = null;
+        $("#searchTitle").hide();
 
         /**
          * Geolocation
          */
-
-
-        function getLocation()
-        {
-            if (navigator.geolocation)
-            {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            }
-            else{x.innerHTML="Geolocation is not supported by this browser.";}
-        }
-
-        // Try HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var longitude = position.coords.longitude;
@@ -336,12 +350,9 @@
             alert('Error: Your browser doesn\'t support geolocation.');
         }
 
-
-
         /**
-         *Get current user information
+         *Current user information
          */
-
         $.ajax({
             type:"POST",
             contentType:"application/json;charset=utf-8",
@@ -369,7 +380,9 @@
             }
         });
 
-        //category list
+        /**
+         * Category list
+         */
         $.ajax({
             type : "GET",
             url : "/category/list",
@@ -393,7 +406,9 @@
             }
         });
 
-        // response of right title
+        /**
+         * Login
+         */
         $("#rightTitle").on("click",function(){
             if(g_currentUser == null){ // if user has not login, redirect to login page
                 window.location.href="/static/login.html";
@@ -416,6 +431,164 @@
             }
             return false;
         });
+
+        /**
+         * Search
+         */
+        function searchMethod(){
+
+            var orderby = "";
+            var categoryFilter = "";
+            var tagFilter = "";
+
+            var keyword = $("#keyword").val();
+            var longitude = $("#longitude").val();
+            var latitude = $("#latitude").val();
+            if($("#keyword").val() == ""){
+                alert("Keyword cannot be empty");
+                return false;
+            }
+            if(longitude== "" || latitude == "" ){
+                alert("Retrieving your location");
+                return false;
+            }
+            /**
+             * Concatenate parameter Strings
+             */
+            if(g_orderby == null){
+                orderby = "";
+            }else{
+                orderby = "&orderby="+g_orderby;
+            }
+
+            if(g_categoryFilter == null){
+                categoryFilter = "";
+            }else{
+                categoryFilter = "&categoryId="+g_categoryFilter;
+            }
+            if(g_tagFilter == null){
+                tagFilter = "";
+            }else{
+                tagFilter = "&tags="+g_tagFilter;
+            }
+            /**
+             * Ajax callback
+             */
+            $.ajax({
+                type : "POST",
+                contentType : "application/json; charset=utf-8",
+                url : "/shop/search?keyword="+keyword+"&longitude="+longitude+"&latitude="+latitude+orderby+categoryFilter+tagFilter,
+                success : function(data){
+                    if(data.status == 'success'){
+                        $("#guess").hide();
+                        $("#tuanList").hide();
+                        $("#searchTitle").show();
+                        $("#searchList").show();
+                        $("#searchList").empty();
+                        $("#slider").hide();
+                        var dataList = data.data.shop;
+                        var categoryList = data.data.category;
+                        var tagsList = data.data.tags;
+                        for(var i = 0; i < dataList.length; i++){
+                            var distance = dataList[i].distance;
+                            var distanceStr = "";
+                            if(distance >= 1000){
+                                distanceStr = getFloat(distance / 1000,1) + " km";
+                            }else{
+                                distanceStr = distance + " m";
+                            }
+                            var content = $('<a href="" class="item Fix hightitem">'+
+                                '<div class="cnt">'+
+                                '<img class="pic" src="'+dataList[i].iconUrl+'"/>'+
+                                '<div class="wrap">'+
+                                '<div class="wrap2">'+
+                                '<div class="content">'+
+                                '<div class="shopname">'+dataList[i].name+'</div><span class="distance">'+distanceStr+'</span>'+
+                                '<div class="title">'+dataList[i].tags+'</div>'+
+                                '<div class="info">'+
+                                '<span class="symbol">¥</span>'+
+                                '<span class="price">'+dataList[i].pricePerConsumer+'</span></div> </div> </div> </div> </div></a>');
+                            $("#searchList").append(content);
+                        }
+
+                        /**
+                         * Filters
+                        */
+                        $("#categoryFilter").empty();
+                        var categoryTag = $("<span class='bubble' data-id='"+0+"' id='category"+0+"'>All</span>");
+                        $("#categoryFilter").append(categoryTag);
+                        for(var i = 0; i < categoryList.length; i++){
+                            var categoryTag = $("<span class='bubble' data-id='"+categoryList[i].id+"' id='category"+categoryList[i].id+"'>"+categoryList[i].name+"</span>");
+                            $("#categoryFilter").append(categoryTag);
+                        }
+
+                        $("span[id^='category']").on('click',function(){
+                            var id = $(this).data("id");
+                            if(id == 0){
+                                g_categoryFilter = null;
+                            }else{
+                                g_categoryFilter = id;
+                            }
+                            searchMethod();
+                        });
+
+                        $("#priceFilter").empty();
+                        $("#priceFilter").append($('<span class="bubble" id="defaultOrder">Default order</span>'));
+                        $("#priceFilter").append($('<span class="bubble" id="lowPriceOrder">Price: low-high</span>'));
+
+                        $("#defaultOrder").on('click',function(){
+                            g_orderby=null;
+                            searchMethod();
+                        });
+                        $("#lowPriceOrder").on('click',function(){
+                            g_orderby=1;
+                            searchMethod();
+                        });
+
+                        $("#tagsFilter").empty();
+                        var tagTag = $("<span class='bubble' data-id='' id='tags'>All</span>");
+                        $("#tagsFilter").append(tagTag);
+                        for(var i = 0; i < tagsList.length; i++){
+                            var tagTag = $("<span class='bubble' data-id='"+tagsList[i].tags+"' id='tags"+tagsList[i].tags+"'>"+tagsList[i].tags+"("+tagsList[i].num+")</span>");
+                            $("#tagsFilter").append(tagTag);
+                        }
+                        $("span[id^='tags']").on('click',function(){
+                            var id = $(this).data("id");
+                            if(id == ''){
+                                g_tagFilter = null;
+                            }else{
+                                g_tagFilter = id;
+                            }
+                            searchMethod();
+                        });
+
+                        /**
+                         *  Search Errors
+                         */
+                    }else{
+                        alert("Search failed, cause: "+data.data.errMsg);
+                    }
+                },
+                error : function(data){
+                    alert("Search failed, cause: "+data.responseText);
+                }
+            });
+        }
+
+        /**
+         * Triggered when user press on 'enter'
+         */
+        $('#keyword').on('keypress',function(event){
+            if(event.keyCode == 13) {
+                searchMethod();
+            }
+        });
+
+        //expand paddingsearch
+        $("#resTitle").on("click",function(){
+            $("#extraPadding").toggle(500);
+        });
+
     });
 </script>
 </html>
