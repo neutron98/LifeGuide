@@ -11,13 +11,13 @@ public class ShopForm {
     @NotBlank(message = "Merchant name can not be empty")
     private String name;
 
-    @NotNull(message = "Price per consumer cannot be empty")
-    private Integer pricePerConsumer;
+    @NotNull(message = "Price level cannot be empty")
+    private Integer priceLevel;
 
-    @NotNull(message = "Latitute cannot be empty")
+    @NotNull(message = "Latitude cannot be empty")
     private BigDecimal latitude;
 
-    @NotNull(message = "Longtitute cannot be empty")
+    @NotNull(message = "Longitude cannot be empty")
     private BigDecimal longitude;
 
     @NotNull(message = "Service category cannot be empty")

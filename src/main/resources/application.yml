@@ -11,7 +11,7 @@ spring:
         name: recommender
         password: admin
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://127.0.0.1:3306/recommender?useUnicode=true&characterEncoding=UTF-8
+        url: jdbc:mysql://127.0.0.1:3306/recommender?useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
     mvc:
         static-path-pattern: /static/**
@@ -32,3 +32,6 @@ spring:
 
 
 
+#elastic search
+elasticsearch:
+    ip: 127.0.0.1:9200

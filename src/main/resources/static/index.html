@@ -200,7 +200,7 @@
 
     <div id="firstHeader" class="titlebar activebar">
         <div class="topbar">
-            <div class="citylist fl" id="citylist" tapmode="">Shanghai<img src="./image/title_home_arrow_down_normal.png" alt="" class="citylistarrow"></div>
+            <div class="citylist fl" id="citylist" tapmode="">New York<img src="./image/title_home_arrow_down_normal.png" alt="" class="citylistarrow"></div>
             <input class="search firstSearch" type="text" placeHolder="Enter shop name to search" name="keyword" id="keyword" style="width:250px;outline-width:0px;"/>
             <span id="rightTitle" style="font-size:16px;color:white;float:right;padding-top:12px;">Login</span>
             <input type="hidden" id="longitude" value="" name="longitude"/>
@@ -319,23 +319,28 @@
                             var dataList = data.data;
                             for (var i = 0; i < dataList.length; i++) {
                                 var distance = dataList[i].distance;
-                                var distanceStr = "0m";
+                                var distanceStr = "0ft";
+                                // if >=1000 ft, display as mile
                                 if (distance >= 1000) {
-                                    distanceStr = getFloat(distance / 1000, 1) + " km";
+                                    distanceStr = getFloat(distance / 5280, 1) + " mi";
                                 } else {
-                                    distanceStr = distance + " m";
+                                    distanceStr = distance + " ft";
                                 }
-                                var content = $('<a href="" class="item Fix hightitem">' +
-                                    '<div class="cnt">' +
-                                    '<img class="pic" src="' + dataList[i].iconUrl + '"/>' +
-                                    '<div class="wrap">' +
-                                    '<div class="wrap2">' +
-                                    '<div class="content">' +
-                                    '<div class="shopname">' + dataList[i].name + '</div><span class="distance">' + distanceStr + '</span>' +
-                                    '<div class="title">' + dataList[i].tags + '</div>' +
-                                    '<div class="info">' +
-                                    '<span class="symbol">¥</span>' +
-                                    '<span class="price">' + dataList[i].pricePerConsumer + '</span></div> </div> </div> </div> </div></a>');
+                                var contentStr =
+                                    '<a href="" class="item Fix hightitem">'+
+                                    '<div class="cnt">'+
+                                    '<img class="pic" src="'+dataList[i].iconUrl+'"/>'+
+                                    '<div class="wrap">'+
+                                    '<div class="wrap2">'+
+                                    '<div class="content">'+
+                                    '<div class="shopname">'+dataList[i].name+'</div><span class="distance">'+distanceStr+'</span>'+
+                                    '<div class="title">'+dataList[i].tags+'</div>'+
+                                    '<div class="info">';
+                                for (j = 0; j < dataList[i].priceLevel; j++) {
+                                    contentStr += '<span class="symbol">$</span>';
+                                }
+                                contentStr += '</div> </div> </div> </div> </div></a>';
+                                var content = $(contentStr);
                                 $("#tuanList").append(content);
                             }
 
@@ -493,11 +498,12 @@
                             var distance = dataList[i].distance;
                             var distanceStr = "";
                             if(distance >= 1000){
-                                distanceStr = getFloat(distance / 1000,1) + " km";
+                                distanceStr = getFloat(distance / 5280,1) + " mi";
                             }else{
-                                distanceStr = distance + " m";
+                                distanceStr = distance + " ft";
                             }
-                            var content = $('<a href="" class="item Fix hightitem">'+
+                            var contentStr =
+                            '<a href="" class="item Fix hightitem">'+
                                 '<div class="cnt">'+
                                 '<img class="pic" src="'+dataList[i].iconUrl+'"/>'+
                                 '<div class="wrap">'+
@@ -505,9 +511,12 @@
                                 '<div class="content">'+
                                 '<div class="shopname">'+dataList[i].name+'</div><span class="distance">'+distanceStr+'</span>'+
                                 '<div class="title">'+dataList[i].tags+'</div>'+
-                                '<div class="info">'+
-                                '<span class="symbol">¥</span>'+
-                                '<span class="price">'+dataList[i].pricePerConsumer+'</span></div> </div> </div> </div> </div></a>');
+                                '<div class="info">';
+                                for (j = 0; j < dataList[i].priceLevel; j++) {
+                                contentStr += '<span class="symbol">$</span>';
+                            }
+                            contentStr += '</div> </div> </div> </div> </div></a>';
+                                 var content = $(contentStr);
                             $("#searchList").append(content);
                         }
 

@@ -32,12 +32,6 @@ public class UserController {
     private UserService userService;
 
 
-    @RequestMapping("/test")
-    @ResponseBody
-    public String test(){
-        return "test";
-    }
-
     @RequestMapping("/index")
     public ModelAndView index(){
         String userName = "youchun";

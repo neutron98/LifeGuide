@@ -16,7 +16,7 @@ public class ShopModel {
 
     private BigDecimal rating;
 
-    private Integer pricePerConsumer;
+    private Integer priceLevel;
 
     private BigDecimal latitude;
 
