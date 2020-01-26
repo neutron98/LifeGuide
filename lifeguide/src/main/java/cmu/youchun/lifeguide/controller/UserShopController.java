@@ -32,11 +32,13 @@ public class UserShopController {
     @RequestMapping("/recommend")
     @ResponseBody
     public CommonRes recommend(@RequestParam("longitude")BigDecimal longitude,
-                               @RequestParam("latitude") BigDecimal latitude) throws BusinessException {
+                               @RequestParam("latitude") BigDecimal latitude,
+                               @RequestParam(name="userId",required = false) Integer userId
+    ) throws BusinessException {
         if (longitude == null || latitude == null){
             throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
         }
-        List<ShopModel> shopModelList = shopService.recommend(longitude, latitude);
+        List<ShopModel> shopModelList = shopService.recommendML(longitude, latitude, userId);
         return CommonRes.create(shopModelList);
     }
 
@@ -61,7 +63,5 @@ public class UserShopController {
         resMap.put("category",categoryModelList);
         resMap.put("tags",tagsAggregation);
         return CommonRes.create(resMap);
-
     }
-
 }

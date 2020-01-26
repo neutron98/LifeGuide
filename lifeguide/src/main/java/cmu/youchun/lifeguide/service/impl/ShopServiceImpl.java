@@ -2,13 +2,12 @@ package cmu.youchun.lifeguide.service.impl;
 
 import cmu.youchun.lifeguide.BusinessException;
 import cmu.youchun.lifeguide.common.EmBusinessError;
+import cmu.youchun.lifeguide.common.LocationUtil;
 import cmu.youchun.lifeguide.dao.ShopModelMapper;
 import cmu.youchun.lifeguide.model.CategoryModel;
 import cmu.youchun.lifeguide.model.SellerModel;
 import cmu.youchun.lifeguide.model.ShopModel;
-import cmu.youchun.lifeguide.service.CategoryService;
-import cmu.youchun.lifeguide.service.SellerService;
-import cmu.youchun.lifeguide.service.ShopService;
+import cmu.youchun.lifeguide.service.*;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.util.EntityUtils;
@@ -26,9 +25,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ShopServiceImpl implements ShopService {
+    @Autowired
+    private RecommendRecallService recommendRecallService;
+
+    @Autowired
+    private RecommendSortService recommendSortService;
+
     @Autowired
     private ShopModelMapper shopModelMapper;
 
@@ -65,13 +71,13 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public ShopModel get(Integer id) {
-        ShopModel storeModel = shopModelMapper.selectByPrimaryKey(id);
-        if(storeModel == null){
+        ShopModel shopModel = shopModelMapper.selectByPrimaryKey(id);
+        if(shopModel == null){
             return null;
         }
-        storeModel.setSellerModel(sellerService.get(storeModel.getSellerId()));
-        storeModel.setCategoryModel(categoryService.get(storeModel.getCategoryId()));
-        return storeModel;
+        shopModel.setSellerModel(sellerService.get(shopModel.getSellerId()));
+        shopModel.setCategoryModel(categoryService.get(shopModel.getCategoryId()));
+        return shopModel;
     }
 
     @Override
@@ -92,6 +98,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public List<ShopModel> recommend(BigDecimal longitude, BigDecimal latitude) {
+
         List<ShopModel> shopModelList = shopModelMapper.recommend(longitude, latitude);
 
         shopModelList.forEach(shopModel -> {
@@ -101,6 +108,26 @@ public class ShopServiceImpl implements ShopService {
 
         return shopModelList;
     }
+
+    @Override
+    public List<ShopModel> recommendML(BigDecimal longitude, BigDecimal latitude, Integer userId) {
+        List<Integer> shopIdList = recommendRecallService.recall(userId);
+        shopIdList = recommendSortService.sort(shopIdList, userId);
+
+        List<ShopModel> shopModelList = shopIdList.stream().map(shopId ->{
+                return get(shopId);}
+                ).collect(Collectors.toList());
+
+        shopModelList.forEach(shopModel -> {
+            shopModel.setDistance(LocationUtil.getDistance(latitude, longitude,
+                    shopModel.getLatitude(), shopModel.getLongitude()));
+            shopModel.setSellerModel(sellerService.get(shopModel.getSellerId()));
+            shopModel.setCategoryModel(categoryService.get(shopModel.getCategoryId()));
+        });
+
+        return shopModelList;
+    }
+
 
     @Override
     public List<ShopModel> search(BigDecimal longitude,

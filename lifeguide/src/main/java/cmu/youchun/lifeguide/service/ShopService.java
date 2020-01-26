@@ -35,6 +35,11 @@ public interface ShopService {
      */
     List<ShopModel> recommend(BigDecimal longitude, BigDecimal latitude);
 
+    /**
+     * Recommend using prediction data
+     */
+
+    List<ShopModel> recommendML(BigDecimal longitude, BigDecimal latitude, Integer userId);
 
     /**
      * Search using a keyword, enabling to select orders and filters.

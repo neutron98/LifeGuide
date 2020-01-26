@@ -6,7 +6,7 @@
 
     <context id="DB2Tables"    targetRuntime="MyBatis3">
         <!--Database username and password-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/recommender" userId="root" password="admin">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/lifeguidedb" userId="root" password="admin">
         </jdbcConnection>
         <!--Path of DataObject class-->
         <javaModelGenerator targetPackage="cmu.youchun.lifeguide.model" targetProject="src/main/java">
@@ -46,10 +46,14 @@
 <!--            <generatedKey column="id" sqlStatement="MySql" identity="true" />-->
 <!--        </table>-->
 
-        <table tableName="shop"  domainObjectName="ShopModel" enableCountByExample="false"
+<!--        <table tableName="shop"  domainObjectName="ShopModel" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>-->
+        <table tableName="recommend"  domainObjectName="RecommendDO" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
 
     </context>

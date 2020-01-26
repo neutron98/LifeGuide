@@ -313,7 +313,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "/shop/recommend?longitude=" + longitude + "&latitude=" + latitude,
+                    url: "/shop/recommend?longitude=" + longitude + "&latitude=" + latitude + "&userId=148",
                     success: function (data) {
                         if (data.status == 'success') {
                             var dataList = data.data;
