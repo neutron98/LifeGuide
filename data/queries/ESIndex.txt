@@ -1,0 +1,125 @@
+
+
+ElasticSearch querie
+
+DELETE existing index
+DELETE /shop
+
+Create index
+PUT /shop
+{
+  "settings":{
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+
+    "analysis": {
+      "analyzer": {
+        "my_tags_analyzer": {
+          "type":      "pattern",
+          "pattern":   ","
+        },
+
+        "my_syns":{
+          "type":"custom",
+          "tokenizer" : "standard",
+          "filter":["lowercase","my_synonyms_filter"]
+        }
+
+      },
+      "filter": {
+        "my_synonyms_filter":{
+          "type":"synonym",
+          "synonyms_path":"analysis/synonyms.txt"
+        }
+      }
+    }
+  },
+
+  "mappings": {
+    "properties": {
+      "id":{"type":"integer"},
+      "name":{"type":"text","analyzer": "my_syns", "search_analyzer": "my_syns"},
+
+      "tags":{"type":"text","analyzer": "my_tags_analyzer", "fielddata": true},
+      "location":{"type":"geo_point"},
+      "rating":{"type":"double"},
+      "price_level":{"type":"integer"},
+      "category_id":{"type":"integer"},
+      "category_name":{"type":"keyword"},
+      "seller_id":{"type":"integer"},
+      "seller_rating":{"type":"double"},
+      "seller_disabled_flag":{"type":"integer"}
+    }
+  }
+}
+
+
+Search queries(for debug only)
+GET /shop/_search
+{
+  "_source": "*",
+  "script_fields":{
+    "distance":{
+      "script":{
+      "source":"haversin(lat, lon, doc['location'].lat, doc['location'].lon)",
+      "lang":"expression",
+      "params":{"lat":40.7,"lon":-73.9}
+      }
+    }
+  },
+  "query":{
+
+    "function_score": {
+      "query":{
+        "bool":{
+          "must":[
+              {"match": {"name": "art"}},
+              {"term":{"seller_disabled_flag": 0}}
+            ]
+        }
+      },
+
+    "functions":[
+        {
+          "gauss": {
+            "location": {
+              "origin": "40.7, -73.9",
+              "scale": "100mi",
+              "offset":"0mi",
+              "decay": 0.5
+            }
+          },
+          "weight":9
+        },
+        {
+          "field_value_factor": {
+          "field": "rating"
+          },
+          "weight":0.2
+        },
+        {
+          "field_value_factor": {
+          "field": "seller_rating"
+          },
+          "weight":0.1
+        }
+      ],
+      "score_mode": "sum",
+      "boost_mode": "replace"
+    }
+  },
+  "sort": [
+    {
+      "_score": {
+        "order": "desc"
+      }
+    }
+  ],
+  "aggs":{
+    "group_by_tags":{
+      "terms": {
+        "field": "tags"
+      }
+    }
+  }
+}
