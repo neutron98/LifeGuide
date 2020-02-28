@@ -1,7 +1,7 @@
 # LifeGuide
 
 ### Description
-Consists of parts: 
+Consists of two parts: 
 1. An user-facing business search and recommendation system. In the search services, users are able to filter the results by category and tags, and choose to order the results by price. The recommendation service will rank the results based on user's location, user profile, and historical behavior (rating, price preference, click. etc). The model was trained offline using ALS model for the Recall layer and Logistic Regression for Rank.
 
 2. A business administration system, which allows the admin to manage(add, delete, disable) shops displayed to users. 
